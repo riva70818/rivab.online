@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Payment – RIVAB</title>
+<title>Place Order – RIVAB</title>
 <style>
 body{font-family:Inter;background:#020617;color:#fff;text-align:center;padding:60px}
 input,button{padding:14px;margin:10px;width:260px;border-radius:10px;border:none}
@@ -11,18 +11,19 @@ button{background:#22c55e;font-weight:800}
 </head>
 <body>
 
-<h1>Place Your Order</h1>
+<h1>Place Order</h1>
 
 <input id="name" placeholder="Your Name"><br>
 <input id="coin" placeholder="Coin Name"><br>
 <input id="qty" placeholder="Quantity"><br>
 
-<button onclick="send()">Send Order on WhatsApp</button>
+<button onclick="send()">Proceed on WhatsApp</button>
 
 <script>
 function send(){
-let m=`Order Details:%0AName:${name.value}%0ACoin:${coin.value}%0AQty:${qty.value}`;
-window.open("https://wa.me/919431792418?text="+m);
+ let oid="RIVAB"+Math.floor(100000+Math.random()*900000);
+ let msg=`New Order%0AOrder ID: ${oid}%0AName: ${name.value}%0ACoin: ${coin.value}%0AQty: ${qty.value}`;
+ window.open("https://wa.me/919431792418?text="+msg);
 }
 </script>
 

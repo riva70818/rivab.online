@@ -2,213 +2,280 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>RIVAB – Premium Digital Coin Marketplace</title>
+<title>RIVAB — Premium Digital Coin Marketplace</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="RIVAB – Buy digital coins instantly with secure transactions and WhatsApp support.">
-<meta name="keywords" content="digital coins, crypto, buy coins whatsapp">
-
-<!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');
-</script>
+<meta name="description" content="RIVAB — Premium digital coin marketplace. Instant delivery, secure transactions & WhatsApp support.">
 
 <style>
 :root{
- --bg:#020617;
- --card:rgba(255,255,255,.08);
+ --bg1:#0b1220;
+ --bg2:#020617;
+ --glass:rgba(255,255,255,.08);
+ --accent:#4fd1ff;
+ --accent2:#22c55e;
  --text:#e5e7eb;
  --muted:#94a3b8;
- --accent:#4fd1ff;
- --green:#22c55e;
 }
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
-body{background:#000;color:var(--text);overflow-x:hidden}
-
-/* VIDEO BG */
-video{
- position:fixed;top:0;left:0;
- width:100%;height:100%;
- object-fit:cover;
- z-index:-3;
-}
-.fallback{
- position:fixed;inset:0;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Segoe UI,Arial}
+html{scroll-behavior:smooth}
+body{
+ color:var(--text);
  background:
-  radial-gradient(circle at 20% 30%,rgba(79,209,255,.2),transparent 40%),
-  radial-gradient(circle at 80% 60%,rgba(34,197,94,.2),transparent 40%),
-  linear-gradient(180deg,#0b1220,#020617);
- z-index:-2;
-}
-.overlay{
- position:fixed;inset:0;
- background:rgba(2,6,23,.78);
- z-index:-1;
+  radial-gradient(1200px 600px at 10% -10%,rgba(79,209,255,.18),transparent 40%),
+  radial-gradient(900px 500px at 90% 20%,rgba(34,197,94,.18),transparent 40%),
+  linear-gradient(180deg,var(--bg1),var(--bg2));
 }
 
-/* NAV */
+/* ====== NAV ====== */
 header{
- display:flex;justify-content:space-between;align-items:center;
- padding:18px 60px;
+ position:sticky;top:0;z-index:20;
  backdrop-filter:blur(10px);
- background:rgba(0,0,0,.6);
- position:sticky;top:0;z-index:10
+ background:linear-gradient(180deg,rgba(2,6,23,.85),rgba(2,6,23,.65));
+ border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{
+ max-width:1200px;margin:auto;
+ display:flex;align-items:center;justify-content:space-between;
+ padding:16px 24px;
 }
 .logo{
- font-size:30px;font-weight:900;
- background:linear-gradient(90deg,var(--accent),var(--green));
- -webkit-background-clip:text;-webkit-text-fill-color:transparent
+ font-weight:900;letter-spacing:2px;font-size:26px;
+ background:linear-gradient(90deg,var(--accent),var(--accent2));
+ -webkit-background-clip:text;-webkit-text-fill-color:transparent;
 }
-nav a{margin-left:20px;color:#fff;text-decoration:none}
-select.lang{background:#000;color:#fff;border:1px solid #333;border-radius:6px;padding:6px}
+.nav a{color:var(--text);text-decoration:none;margin-left:18px}
+.nav a:hover{color:var(--accent)}
 
-/* HERO */
+/* ====== HERO ====== */
 .hero{
- min-height:90vh;
- display:flex;flex-direction:column;
- justify-content:center;align-items:center;
- text-align:center;padding:40px;
+ max-width:1200px;margin:40px auto 0;
+ padding:80px 24px 120px;position:relative;overflow:hidden;
 }
-.hero h1{font-size:56px;max-width:900px}
-.hero p{margin-top:18px;color:var(--muted);max-width:720px}
+.hero-grid{
+ display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
+}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.h-title{
+ font-size:56px;line-height:1.05;letter-spacing:-.02em;
+}
+.h-sub{margin-top:18px;color:var(--muted);font-size:18px;max-width:560px}
+.cta-row{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
 .btn{
- margin-top:30px;
- padding:18px 48px;
- background:linear-gradient(90deg,var(--green),var(--accent));
- color:#020617;
- border-radius:50px;
- font-weight:900;
- text-decoration:none;
- box-shadow:0 0 35px rgba(79,209,255,.6)
+ padding:16px 36px;border-radius:999px;font-weight:800;
+ text-decoration:none;display:inline-flex;align-items:center;gap:10px;
 }
-
-/* COUNTERS */
-.stats{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
- gap:25px;
- padding:60px;
- text-align:center;
+.btn-primary{
+ color:#020617;
+ background:linear-gradient(90deg,var(--accent2),var(--accent));
+ box-shadow:0 20px 50px rgba(79,209,255,.35);
+}
+.btn-ghost{
+ color:var(--text);border:1px solid rgba(255,255,255,.14);
+ background:rgba(255,255,255,.04);
+}
+.hero-card{
+ background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
+ border:1px solid rgba(255,255,255,.14);
+ border-radius:22px;padding:28px;
+ box-shadow:0 30px 80px rgba(0,0,0,.45);
 }
 .stat{
- background:var(--card);
- padding:30px;
- border-radius:20px;
+ display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px
 }
-.stat strong{font-size:42px;display:block}
+.stat div{
+ background:rgba(255,255,255,.06);
+ border:1px solid rgba(255,255,255,.12);
+ border-radius:14px;padding:16px;text-align:center
+}
+.stat strong{font-size:28px}
+.glow{
+ position:absolute;inset:auto -30% -40% -30%;
+ height:380px;filter:blur(80px);
+ background:radial-gradient(circle,rgba(79,209,255,.25),transparent 60%);
+ animation:float 10s ease-in-out infinite alternate;
+}
+@keyframes float{to{transform:translateY(-30px)}}
 
-/* CHART */
-.chart{
- max-width:600px;margin:40px auto;
- background:var(--card);
- padding:30px;border-radius:20px;
+/* ====== MARQUEE ====== */
+.marquee{
+ border-top:1px solid rgba(255,255,255,.08);
+ border-bottom:1px solid rgba(255,255,255,.08);
+ background:rgba(255,255,255,.03);
+ overflow:hidden
 }
-.bar{
- height:14px;background:#111;border-radius:10px;margin-top:12px;
- overflow:hidden;
+.track{
+ display:flex;gap:60px;white-space:nowrap;
+ animation:scroll 25s linear infinite;padding:14px 0
 }
-.fill{
- height:100%;width:0%;
- background:linear-gradient(90deg,var(--accent),var(--green));
- transition:2s;
+@keyframes scroll{to{transform:translateX(-50%)}}
+.badge{color:var(--muted)}
+
+/* ====== SECTIONS ====== */
+.section{max-width:1200px;margin:0 auto;padding:90px 24px}
+.section h2{text-align:center;font-size:40px;margin-bottom:14px}
+.lead{text-align:center;color:var(--muted);max-width:820px;margin:0 auto 50px}
+
+/* ====== CARDS ====== */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
+.card{
+ background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
+ border:1px solid rgba(255,255,255,.14);
+ border-radius:22px;padding:28px;text-align:center;
+ transition:.35s;box-shadow:0 10px 40px rgba(0,0,0,.35)
+}
+.card:hover{transform:translateY(-10px);box-shadow:0 30px 80px rgba(79,209,255,.45)}
+.icon{font-size:42px;margin-bottom:12px}
+
+/* ====== PRICING ====== */
+.price{font-size:42px;font-weight:900;margin:10px 0}
+.ribbon{
+ position:absolute;top:16px;right:-38px;transform:rotate(45deg);
+ background:linear-gradient(90deg,var(--accent),var(--accent2));
+ color:#020617;font-weight:900;padding:6px 46px
 }
 
-/* FOOTER */
-footer{text-align:center;padding:30px;background:#000;color:var(--muted)}
+/* ====== TESTIMONIALS ====== */
+.t-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.t{
+ background:rgba(255,255,255,.06);
+ border:1px solid rgba(255,255,255,.12);
+ border-radius:18px;padding:22px
+}
+.t p{color:var(--muted);font-style:italic}
+.t strong{display:block;margin-top:10px}
 
-/* WHATSAPP */
+/* ====== FINAL CTA ====== */
+.final{
+ text-align:center;padding:90px 24px;
+ background:
+  radial-gradient(600px 300px at 50% 0,rgba(34,197,94,.25),transparent 60%);
+}
+
+/* ====== FOOTER ====== */
+footer{
+ text-align:center;padding:28px 24px;
+ border-top:1px solid rgba(255,255,255,.08);
+ color:var(--muted)
+}
+
+/* ====== WHATSAPP ====== */
 .whatsapp{
- position:fixed;right:25px;bottom:25px;
- width:60px;height:60px;border-radius:50%;
+ position:fixed;right:22px;bottom:22px;z-index:30;
+ width:64px;height:64px;border-radius:50%;
  background:#25D366;color:#020617;
  display:flex;align-items:center;justify-content:center;
  font-size:30px;text-decoration:none;
- box-shadow:0 0 30px #25D366;
+ box-shadow:0 20px 40px rgba(37,211,102,.6)
 }
 </style>
 </head>
 
 <body>
 
-<!-- VIDEO BACKGROUND -->
-<video autoplay muted loop playsinline>
- <source src="https://cdn.coverr.co/videos/coverr-bitcoin-mining-farm-5420/1080p.mp4" type="video/mp4">
-</video>
-<div class="fallback"></div>
-<div class="overlay"></div>
-
 <header>
-<div class="logo">RIVAB</div>
-<nav>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Services</a>
-<a href="#">Contact</a>
-<select class="lang" onchange="setLang(this.value)">
-<option value="en">EN</option>
-<option value="hi">HI</option>
-</select>
-</nav>
+  <div class="nav">
+    <div class="logo">RIVAB</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<div class="hero">
-<h1 id="t1">Premium Digital Coin Marketplace</h1>
-<p id="t2">Instant delivery • Secure transactions • WhatsApp support</p>
-<a class="btn" href="https://wa.me/919431792418" onclick="gtag('event','conversion',{event_category:'whatsapp'});">
-Buy on WhatsApp
-</a>
+<section class="hero">
+  <div class="glow"></div>
+  <div class="hero-grid">
+    <div>
+      <h1 class="h-title">Premium Digital Coins.<br>Instant. Secure. Trusted.</h1>
+      <p class="h-sub">
+        Buy verified digital coins with lightning-fast delivery, transparent pricing
+        and real WhatsApp support — built for speed and trust.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://wa.me/919431792418">Buy on WhatsApp</a>
+        <a class="btn btn-ghost" href="#pricing">View Pricing</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <strong>Live Trust Metrics</strong>
+      <div class="stat">
+        <div><strong>10k+</strong><br><small>Orders</small></div>
+        <div><strong>5–15m</strong><br><small>Delivery</small></div>
+        <div><strong>24×7</strong><br><small>Support</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="track">
+    <span class="badge">🪙 Verified Coins</span>
+    <span class="badge">⚡ Instant Delivery</span>
+    <span class="badge">🔐 Secure Transactions</span>
+    <span class="badge">💬 WhatsApp Support</span>
+    <span class="badge">🪙 Verified Coins</span>
+    <span class="badge">⚡ Instant Delivery</span>
+  </div>
 </div>
 
-<!-- STATS -->
-<div class="stats">
-<div class="stat"><strong id="c1">0</strong>Orders</div>
-<div class="stat"><strong id="c2">0</strong>Avg Delivery (min)</div>
-<div class="stat"><strong id="c3">0</strong>Happy Clients</div>
-</div>
+<section class="section">
+  <h2>Why Choose RIVAB</h2>
+  <p class="lead">A marketplace engineered for reliability, speed and clarity.</p>
+  <div class="grid">
+    <div class="card"><div class="icon">🛡️</div><h3>Trust First</h3><p>Clear process, no hidden steps.</p></div>
+    <div class="card"><div class="icon">⚡</div><h3>Fast Processing</h3><p>Orders move immediately after confirmation.</p></div>
+    <div class="card"><div class="icon">💬</div><h3>Real Support</h3><p>Humans on WhatsApp, not bots.</p></div>
+    <div class="card"><div class="icon">📦</div><h3>Order Care</h3><p>Updates from start to finish.</p></div>
+  </div>
+</section>
 
-<!-- CHART -->
-<div class="chart">
-<h3>Service Reliability</h3>
-<div class="bar"><div class="fill" style="width:95%"></div></div>
-<div class="bar"><div class="fill" style="width:90%"></div></div>
-<div class="bar"><div class="fill" style="width:98%"></div></div>
-</div>
+<section id="pricing" class="section">
+  <h2>Simple Pricing</h2>
+  <p class="lead">Transparent plans for every need.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Starter</h3>
+      <div class="price">₹999</div>
+      <p>Small quantity • Instant delivery • WhatsApp support</p>
+    </div>
+    <div class="card" style="position:relative">
+      <div class="ribbon">POPULAR</div>
+      <h3>Pro</h3>
+      <div class="price">₹4,999</div>
+      <p>Medium quantity • Priority delivery • Best value</p>
+    </div>
+    <div class="card">
+      <h3>Premium</h3>
+      <div class="price">₹9,999</div>
+      <p>Large quantity • Fastest processing • Dedicated support</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>What Clients Say</h2>
+  <p class="lead">Real feedback from real buyers.</p>
+  <div class="t-wrap">
+    <div class="t"><p>“Delivery was super fast and smooth.”</p><strong>— Aman, Delhi</strong></div>
+    <div class="t"><p>“Transparent pricing and excellent WhatsApp support.”</p><strong>— Rahul, Mumbai</strong></div>
+    <div class="t"><p>“Professional service. Highly recommended.”</p><strong>— Neha, Bengaluru</strong></div>
+  </div>
+</section>
+
+<section class="final">
+  <h2>Ready to Buy Digital Coins?</h2>
+  <p class="lead">Start in seconds on WhatsApp.</p>
+  <a class="btn btn-primary" href="https://wa.me/919431792418">Start Now</a>
+</section>
 
 <footer>
-© RIVAB – Digital Coin Selling Platform
+  © RIVAB — Premium Digital Coin Marketplace
 </footer>
 
 <a class="whatsapp" href="https://wa.me/919431792418">💬</a>
-
-<script>
-/* COUNTERS */
-function animate(id,target){
- let el=document.getElementById(id),n=0;
- let i=setInterval(()=>{
-  n+=Math.ceil(target/40);
-  if(n>=target){n=target;clearInterval(i)}
-  el.innerText=n;
- },40);
-}
-animate("c1",10250);
-animate("c2",7);
-animate("c3",9800);
-
-/* LANGUAGE */
-function setLang(l){
- if(l==="hi"){
-  t1.innerText="प्रीमियम डिजिटल कॉइन मार्केटप्लेस";
-  t2.innerText="तुरंत डिलीवरी • सुरक्षित लेनदेन • व्हाट्सएप सपोर्ट";
- }else{
-  t1.innerText="Premium Digital Coin Marketplace";
-  t2.innerText="Instant delivery • Secure transactions • WhatsApp support";
- }
-}
-</script>
 
 </body>
 </html>

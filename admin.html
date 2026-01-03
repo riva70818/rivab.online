@@ -1,27 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>RIVAB Admin</title>
+<meta charset="UTF-8">
+<title>RIVAB Admin Dashboard</title>
 <style>
 body{font-family:Inter;background:#020617;color:#fff;padding:40px}
-.card{
-background:#0f213f;padding:25px;border-radius:16px;margin-bottom:20px
-}
+h1{color:#4fd1ff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:#0f213f;padding:25px;border-radius:18px}
+.small{color:#94a3b8;font-size:14px}
 </style>
 </head>
 <body>
 
-<h1>Admin Dashboard</h1>
+<h1>RIVAB Admin Panel</h1>
 
-<div class="card">📦 Orders → WhatsApp</div>
-<div class="card">💰 Verify Payment</div>
-<div class="card">✅ Update Order Status</div>
+<div class="grid">
 <div class="card">
-Quick Replies:<br>
-Payment Received ✅<br>
-Order Processing ⏳<br>
-Delivered 🎉
+<h3>📦 Orders</h3>
+<p class="small">Orders received via WhatsApp</p>
 </div>
+
+<div class="card">
+<h3>💰 Payments</h3>
+<p class="small">Verify UPI / Screenshot manually</p>
+</div>
+
+<div class="card">
+<h3>🚚 Delivery</h3>
+<p class="small">Send delivery confirmation on WhatsApp</p>
+</div>
+
+<div class="card">
+<h3>⚡ Quick Replies</h3>
+<p>
+Payment received ✅<br>
+Order processing ⏳<br>
+Order delivered 🎉
+</p>
+</div>
+</div>
+
+<p style="margin-top:40px;color:#94a3b8">
+🔒 This admin panel can be connected to Firebase / database later.
+</p>
 
 </body>
 </html>

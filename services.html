@@ -2,52 +2,115 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Services – RIVAB</title>
+<title>RIVAB | Digital Coin Selling</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
 body{
- margin:0;
- font-family:Segoe UI,Arial;
- background:radial-gradient(circle at top,#0f172a,#020617);
- color:#e5e7eb;
+ background:radial-gradient(circle at top,#020617,#000);
+ color:#fff;
+ overflow-x:hidden;
 }
+
+/* NAV */
 nav{
- position:sticky;top:0;
- background:rgba(2,6,23,.9);
- backdrop-filter:blur(12px);
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
  padding:18px 60px;
- display:flex;justify-content:space-between;align-items:center;
- border-bottom:1px solid rgba(56,189,248,.25);
+ background:#020617;
+ border-bottom:1px solid #38bdf833;
 }
-.logo{font-size:26px;font-weight:800;color:#38bdf8}
-nav a{color:#e5e7eb;margin-left:25px;text-decoration:none}
-nav a:hover{color:#38bdf8}
+nav h1{color:#38bdf8;letter-spacing:2px}
+nav a{color:#fff;text-decoration:none;margin-left:25px}
+nav a:hover{color:#22c55e}
 
-.section{padding:90px 60px;text-align:center}
-h1{color:#38bdf8;margin-bottom:50px}
+/* HERO */
+.hero{
+ height:90vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+}
+.hero h2{font-size:60px;margin-bottom:15px}
+.hero p{opacity:.8;margin-bottom:30px}
+.hero a{
+ background:#22c55e;
+ color:#fff;
+ padding:15px 40px;
+ border-radius:30px;
+ text-decoration:none;
+ box-shadow:0 0 25px #22c55e;
+}
 
-.cards{
+/* SECTION */
+section{padding:90px 10%}
+section h3{text-align:center;font-size:42px;margin-bottom:50px}
+
+/* GRID */
+.grid{
  display:grid;
- grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
  gap:30px;
 }
-.card{
- background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
- border:1px solid rgba(56,189,248,.25);
- border-radius:20px;
- padding:35px;
- box-shadow:0 0 25px rgba(15,23,42,.9);
-}
-.card h3{color:#fff}
-.card p{color:#cbd5f5}
 
-footer{
- text-align:center;
+/* CARD */
+.card{
+ background:#020617;
  padding:30px;
- color:#94a3b8;
- border-top:1px solid rgba(56,189,248,.25);
+ border-radius:18px;
+ position:relative;
+ overflow:hidden;
+ transition:.4s;
+}
+.card:hover{
+ transform:translateY(-10px);
+ box-shadow:0 0 40px #38bdf8aa;
+}
+.card::before{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:conic-gradient(transparent,#38bdf8,transparent);
+ animation:spin 6s linear infinite;
+ opacity:.4;
+}
+.card::after{
+ content:"";
+ position:absolute;
+ inset:3px;
+ background:#020617;
+ border-radius:15px;
+}
+.card *{position:relative;z-index:1}
+
+@keyframes spin{100%{transform:rotate(360deg)}}
+
+.coin{
+ font-size:42px;
+ margin-bottom:15px;
+ animation:float 3s ease-in-out infinite;
+}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* FOOTER */
+footer{text-align:center;padding:25px;opacity:.6}
+
+/* WHATSAPP */
+.whatsapp{
+ position:fixed;
+ bottom:25px;
+ right:25px;
+ background:#22c55e;
+ padding:16px 18px;
+ border-radius:50%;
+ font-size:24px;
+ color:#fff;
+ text-decoration:none;
+ box-shadow:0 0 30px #22c55e;
 }
 </style>
 </head>
@@ -55,7 +118,7 @@ footer{
 <body>
 
 <nav>
- <div class="logo">RIVAB</div>
+ <h1>RIVAB</h1>
  <div>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
@@ -64,29 +127,40 @@ footer{
  </div>
 </nav>
 
-<section class="section">
-<h1>Our Services</h1>
-
-<div class="cards">
- <div class="card">
-  <h3>Digital Coin Selling</h3>
-  <p>Fast & verified digital coins.</p>
- </div>
- <div class="card">
-  <h3>Instant Delivery</h3>
-  <p>No waiting time after confirmation.</p>
- </div>
- <div class="card">
-  <h3>Secure Deals</h3>
-  <p>100% secure transaction handling.</p>
- </div>
- <div class="card">
-  <h3>WhatsApp Sales</h3>
-  <p>Chat & buy instantly via WhatsApp.</p>
- </div>
+<div class="hero">
+ <h2>Digital Coin Selling Made Easy</h2>
+ <p>Instant Delivery • Secure Transactions • WhatsApp Support</p>
+ <a href="https://wa.me/919431792418">Chat on WhatsApp</a>
 </div>
+
+<section>
+ <h3>Our Services</h3>
+ <div class="grid">
+  <div class="card">
+   <div class="coin">🪙</div>
+   <h4>Coin Selling</h4>
+   <p>Fast & verified digital coins.</p>
+  </div>
+  <div class="card">
+   <div class="coin">⚡</div>
+   <h4>Instant Delivery</h4>
+   <p>No waiting time.</p>
+  </div>
+  <div class="card">
+   <div class="coin">🔐</div>
+   <h4>Secure Deals</h4>
+   <p>100% secure handling.</p>
+  </div>
+  <div class="card">
+   <div class="coin">💬</div>
+   <h4>WhatsApp Sales</h4>
+   <p>Chat & buy instantly.</p>
+  </div>
+ </div>
 </section>
 
-<footer>© 2026 RIVAB</footer>
+<footer>© RIVAB</footer>
+<a class="whatsapp" href="https://wa.me/919431792418">💬</a>
+
 </body>
 </html>

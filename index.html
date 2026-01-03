@@ -2,91 +2,180 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>RIVA B | Digital Collectible Coins</title>
+    <title>RIVAB | Digital Coin Selling & WhatsApp Based Services</title>
+    <meta name="description" content="RIVAB provides digital coin selling with instant delivery, secure transactions and WhatsApp based support.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0f172a;
-            color: #ffffff;
-            text-align: center;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #333;
         }
         header {
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #1e293b, #020617);
+            background: #0f172a;
+            color: #fff;
+            padding: 15px 20px;
         }
-        h1 {
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        nav {
+            margin-top: 5px;
+        }
+        nav a {
+            color: #fff;
+            margin-right: 15px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .hero {
+            background: linear-gradient(120deg, #1e293b, #0f172a);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 32px;
             margin-bottom: 10px;
-            font-size: 36px;
         }
-        p {
-            max-width: 700px;
-            margin: 10px auto;
-            line-height: 1.6;
-            color: #e5e7eb;
+        .hero p {
+            font-size: 16px;
+            margin-bottom: 25px;
         }
         .btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 15px 30px;
             background: #22c55e;
-            color: #000;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
             text-decoration: none;
-            font-size: 18px;
             font-weight: bold;
-            border-radius: 8px;
         }
         .section {
             padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .section h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 26px;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .card h4 {
+            margin-bottom: 10px;
+            color: #0f172a;
         }
         footer {
-            background: #020617;
+            background: #0f172a;
+            color: #fff;
+            text-align: center;
             padding: 20px;
             font-size: 14px;
-            color: #9ca3af;
+        }
+        footer a {
+            color: #22c55e;
+            text-decoration: none;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>RIVA B</h1>
-    <p>Blockchain-based Digital Collectible Coins for modern digital ownership.</p>
-    <a class="btn" href="https://wa.me/919431792418" target="_blank">
-        Chat on WhatsApp
-    </a>
+    <h1>RIVAB</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
-<div class="section">
-    <h2>What We Offer</h2>
-    <p>
-        RIVA B provides unique digital collectible coins created for collectors and digital enthusiasts.
-        Our products are purely digital and designed for ownership, collection, and transfer.
-    </p>
-</div>
+<section class="hero">
+    <h2>Digital Coin Selling Made Easy</h2>
+    <p>Instant Delivery • Secure Transaction • WhatsApp Based Support</p>
+    <a class="btn" href="https://wa.me/919431792418?text=Hello%2C%20I%20want%20to%20buy%20digital%20coins.%20Please%20share%20details." target="_blank">
+        Chat on WhatsApp
+    </a>
+</section>
 
-<div class="section">
-    <h2>How It Works</h2>
-    <p>
-        1. Explore our digital collections<br>
-        2. Contact us on WhatsApp<br>
-        3. Complete verification & payment<br>
-        4. Receive your digital collectible
-    </p>
-</div>
+<section class="section" id="services">
+    <h3>Our Services</h3>
+    <div class="services">
+        <div class="card">
+            <h4>Digital Coin Selling</h4>
+            <p>Buy digital coins quickly with trusted service.</p>
+        </div>
+        <div class="card">
+            <h4>Instant Delivery</h4>
+            <p>Fast processing and quick delivery after confirmation.</p>
+        </div>
+        <div class="card">
+            <h4>Secure Transaction</h4>
+            <p>Your transactions are handled safely and securely.</p>
+        </div>
+        <div class="card">
+            <h4>WhatsApp Support</h4>
+            <p>Direct WhatsApp based assistance for all queries.</p>
+        </div>
+    </div>
+</section>
 
-<div class="section">
-    <h2>Disclaimer</h2>
-    <p>
-        Digital coins are digital collectibles only. No guaranteed returns or profits are promised.
-        Value may vary based on demand and market conditions. We do not provide investment or financial advice.
+<section class="section" id="contact">
+    <h3>Contact Us</h3>
+    <p style="text-align:center;">
+        For buying digital coins or service related queries,<br>
+        click below to connect with us on WhatsApp.
     </p>
-</div>
+    <p style="text-align:center; margin-top:20px;">
+        <a class="btn" href="https://wa.me/919431792418?text=Hello%2C%20I%20want%20to%20buy%20digital%20coins.%20Please%20share%20details." target="_blank">
+            WhatsApp Now
+        </a>
+    </p>
+</section>
 
 <footer>
-    © 2026 RIVA B | All Rights Reserved
+    <p>© 2026 RIVAB. All Rights Reserved.</p>
+    <p>
+        <small>
+            Disclaimer: We provide digital services only. We do not offer investment advice. All transactions are final.
+        </small>
+    </p>
 </footer>
+
+<a class="whatsapp" href="https://wa.me/919431792418?text=Hello%2C%20I%20want%20to%20buy%20digital%20coins.%20Please%20share%20details." target="_blank">
+    ☎
+</a>
 
 </body>
 </html>

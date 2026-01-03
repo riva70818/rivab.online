@@ -2,286 +2,221 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>RIVAB – Digital Coin Selling Platform</title>
+<title>RIVAB – Digital Coin Selling</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="RIVAB – Buy digital coins instantly with secure transactions and WhatsApp support.">
+<meta name="description" content="RIVAB – Buy digital coins instantly with WhatsApp support">
 
 <style>
+:root{
+ --bg:#020814;
+ --bg2:#0b1d3a;
+ --card:#0f213f;
+ --text:#ffffff;
+ --sub:#cbd5e1;
+ --accent:#4fd1ff;
+ --green:#22c55e;
+}
+.light{
+ --bg:#f4f7fb;
+ --bg2:#ffffff;
+ --card:#ffffff;
+ --text:#020814;
+ --sub:#334155;
+}
+
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
 body{
- background:radial-gradient(circle at top,#0b1d3a,#020814);
- color:#fff;
- overflow-x:hidden;
+ background:linear-gradient(135deg,var(--bg2),var(--bg));
+ color:var(--text);
+ transition:.4s;
 }
 
-/* ===== NAV ===== */
+/* NAV */
 header{
- display:flex;
- justify-content:space-between;
- align-items:center;
- padding:20px 60px;
- background:rgba(0,0,0,.6);
- backdrop-filter:blur(10px);
- position:sticky;top:0;z-index:10
+ display:flex;justify-content:space-between;align-items:center;
+ padding:18px 60px;background:rgba(0,0,0,.4);
+ backdrop-filter:blur(10px);position:sticky;top:0;z-index:10
 }
 .logo{
- font-size:32px;
- font-weight:900;
- letter-spacing:2px;
- background:linear-gradient(90deg,#4fd1ff,#22c55e);
- -webkit-background-clip:text;
- -webkit-text-fill-color:transparent;
+ font-size:30px;font-weight:900;
+ background:linear-gradient(90deg,var(--accent),var(--green));
+ -webkit-background-clip:text;-webkit-text-fill-color:transparent
 }
-nav a{
- margin-left:22px;
- color:#e5e7eb;
- text-decoration:none;
- font-weight:500;
+nav a{margin-left:22px;color:var(--text);text-decoration:none}
+.toggle{
+ cursor:pointer;
+ padding:8px 14px;
+ border-radius:20px;
+ background:var(--card);
+ font-size:14px
 }
-nav a:hover{color:#4fd1ff}
 
-/* ===== HERO ===== */
+/* HERO WITH ANIMATED BG */
 .hero{
  min-height:90vh;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- text-align:center;
- padding:40px;
- position:relative;
+ display:flex;flex-direction:column;
+ justify-content:center;align-items:center;
+ text-align:center;padding:40px;
+ position:relative;overflow:hidden
 }
 .hero::before{
  content:"";
- position:absolute;
- inset:0;
+ position:absolute;inset:0;
  background:
-  radial-gradient(circle at 20% 30%,rgba(79,209,255,.15),transparent 40%),
-  radial-gradient(circle at 80% 60%,rgba(34,197,94,.15),transparent 40%);
- animation:movebg 12s infinite alternate;
+  radial-gradient(circle at 20% 30%,rgba(79,209,255,.25),transparent 40%),
+  radial-gradient(circle at 80% 60%,rgba(34,197,94,.25),transparent 40%);
+ animation:move 12s infinite alternate;
 }
-@keyframes movebg{
- 0%{transform:translateY(0)}
- 100%{transform:translateY(-30px)}
-}
+@keyframes move{to{transform:translateY(-40px)}}
 .hero *{position:relative}
 
-.hero h1{
- font-size:56px;
- line-height:1.2;
- max-width:900px;
-}
-.hero p{
- margin-top:18px;
- font-size:18px;
- color:#cbd5e1;
- max-width:720px;
-}
-.hero .cta{
+.hero h1{font-size:56px;max-width:900px}
+.hero p{margin-top:18px;color:var(--sub);max-width:720px}
+.btn{
  margin-top:35px;
  padding:18px 48px;
- background:linear-gradient(90deg,#22c55e,#4fd1ff);
+ background:linear-gradient(90deg,var(--green),var(--accent));
  color:#020814;
  border-radius:50px;
  font-weight:800;
  text-decoration:none;
- font-size:18px;
- box-shadow:0 0 35px rgba(79,209,255,.6);
+ box-shadow:0 0 35px rgba(79,209,255,.6)
 }
 
-/* ===== TRUST BAR ===== */
-.trust{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
- gap:20px;
- padding:40px 60px;
- background:rgba(0,0,0,.5);
- text-align:center;
-}
-.trust div{
- padding:20px;
- background:rgba(255,255,255,.04);
- border-radius:16px;
-}
-.trust span{font-size:30px;display:block;margin-bottom:10px}
+/* SECTION */
+section{padding:90px 60px}
+section h2{text-align:center;font-size:40px;margin-bottom:15px}
+.lead{text-align:center;color:var(--sub);max-width:800px;margin:0 auto 60px}
 
-/* ===== SECTION ===== */
-section{
- padding:90px 60px;
-}
-section h2{
- text-align:center;
- font-size:40px;
- margin-bottom:20px;
-}
-section p.lead{
- text-align:center;
- color:#cbd5e1;
- max-width:800px;
- margin:0 auto 60px;
-}
-
-/* ===== CARDS ===== */
-.cards{
+/* CARDS */
+.grid{
  display:grid;
  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
- gap:30px;
+ gap:30px
 }
 .card{
- background:linear-gradient(180deg,#0f213f,#020814);
- border-radius:22px;
- padding:35px;
+ background:var(--card);
+ padding:35px;border-radius:22px;
  text-align:center;
  box-shadow:0 0 35px rgba(79,209,255,.25);
- transition:.4s;
+ transition:.4s
 }
-.card:hover{
- transform:translateY(-12px);
- box-shadow:0 0 60px rgba(79,209,255,.7);
-}
-.card .icon{
- font-size:44px;
- margin-bottom:15px;
-}
-.card h3{margin-bottom:10px}
-.card p{color:#cbd5e1}
+.card:hover{transform:translateY(-12px);box-shadow:0 0 60px rgba(79,209,255,.6)}
+.icon{font-size:44px;margin-bottom:15px}
 
-/* ===== HOW IT WORKS ===== */
-.steps{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:25px;
+/* PRICING */
+.price{font-size:36px;font-weight:900;margin:15px 0}
+
+/* TESTIMONIALS */
+.testimonial{
+ font-style:italic;
+ color:var(--sub);
 }
-.step{
- background:rgba(255,255,255,.05);
- padding:30px;
- border-radius:20px;
- text-align:center;
-}
-.step strong{
- display:block;
- font-size:28px;
- color:#4fd1ff;
- margin-bottom:10px;
+.user{margin-top:12px;font-weight:700}
+
+/* CTA */
+.final{
+ text-align:center;padding:80px 40px;
+ background:linear-gradient(135deg,var(--bg2),var(--bg))
 }
 
-/* ===== FINAL CTA ===== */
-.final-cta{
- text-align:center;
- padding:80px 40px;
- background:linear-gradient(135deg,#0b1d3a,#020814);
-}
-.final-cta h2{font-size:42px}
-.final-cta a{
- display:inline-block;
- margin-top:30px;
- padding:18px 50px;
- background:#25D366;
- color:#020814;
- font-weight:900;
- border-radius:50px;
- text-decoration:none;
- font-size:18px;
- box-shadow:0 0 40px rgba(37,211,102,.7);
-}
+/* FOOTER */
+footer{text-align:center;padding:30px;background:#000;color:#94a3b8}
 
-/* ===== FOOTER ===== */
-footer{
- text-align:center;
- padding:30px;
- background:#000;
- color:#94a3b8;
-}
-
-/* ===== WHATSAPP FLOAT ===== */
+/* WHATSAPP */
 .whatsapp{
- position:fixed;
- right:25px;
- bottom:25px;
- width:62px;
- height:62px;
- border-radius:50%;
+ position:fixed;right:25px;bottom:25px;
+ width:62px;height:62px;border-radius:50%;
  background:#25D366;
- display:flex;
- align-items:center;
- justify-content:center;
- font-size:30px;
- color:#020814;
- text-decoration:none;
- box-shadow:0 0 30px #25D366;
+ display:flex;align-items:center;justify-content:center;
+ font-size:30px;color:#020814;text-decoration:none;
+ box-shadow:0 0 30px #25D366
 }
 </style>
 </head>
 
-<body>
+<body id="body">
 
 <header>
 <div class="logo">RIVAB</div>
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="services.html">Services</a>
-<a href="contact.html">Contact</a>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+<span class="toggle" onclick="toggleTheme()">🌙 / ☀️</span>
 </nav>
 </header>
 
+<!-- HERO -->
 <div class="hero">
-<h1>Digital Coin Selling Made Simple, Secure & Instant</h1>
-<p>
-Buy verified digital coins with complete transparency, fast delivery
-and real WhatsApp-based support.
-</p>
-<a class="cta" href="https://wa.me/919431792418">Buy Now on WhatsApp</a>
+<h1>Buy Digital Coins Fast, Secure & Hassle-Free</h1>
+<p>Instant delivery • Transparent pricing • WhatsApp-based real support</p>
+<a class="btn" href="https://wa.me/919431792418">Buy Now on WhatsApp</a>
 </div>
 
-<div class="trust">
-<div><span>🪙</span>Verified Digital Coins</div>
-<div><span>⚡</span>Instant Delivery</div>
-<div><span>🔐</span>Secure Transactions</div>
-<div><span>💬</span>24×7 WhatsApp Support</div>
-</div>
-
+<!-- WHY -->
 <section>
 <h2>Why Choose RIVAB</h2>
-<p class="lead">
-RIVAB is built for users who want a fast, safe and hassle-free
-digital coin buying experience without complicated systems.
-</p>
+<p class="lead">Built for speed, trust and simplicity in digital coin buying</p>
 
-<div class="cards">
-<div class="card">
-<div class="icon">🛡️</div>
-<h3>Trusted Platform</h3>
-<p>Clear process, honest communication and no hidden steps.</p>
-</div>
-<div class="card">
-<div class="icon">⚡</div>
-<h3>Fast Processing</h3>
-<p>Orders are processed quickly after confirmation.</p>
-</div>
-<div class="card">
-<div class="icon">💬</div>
-<h3>Direct WhatsApp Support</h3>
-<p>Real humans, real support — before and after delivery.</p>
-</div>
+<div class="grid">
+<div class="card"><div class="icon">🪙</div>Verified Digital Coins</div>
+<div class="card"><div class="icon">⚡</div>Instant Delivery</div>
+<div class="card"><div class="icon">🔐</div>Secure Transactions</div>
+<div class="card"><div class="icon">💬</div>24×7 WhatsApp Support</div>
 </div>
 </section>
 
+<!-- PRICING -->
 <section>
-<h2>How It Works</h2>
-<p class="lead">Simple 4-step process to get your digital coins</p>
+<h2>Pricing Plans</h2>
+<p class="lead">Simple & transparent pricing</p>
 
-<div class="steps">
-<div class="step"><strong>1</strong>Message us on WhatsApp</div>
-<div class="step"><strong>2</strong>Confirm coin & quantity</div>
-<div class="step"><strong>3</strong>Complete payment</div>
-<div class="step"><strong>4</strong>Receive coins instantly</div>
+<div class="grid">
+<div class="card">
+<h3>Starter</h3>
+<div class="price">₹999</div>
+<p>Small quantity<br>Instant delivery<br>WhatsApp support</p>
+</div>
+<div class="card">
+<h3>Popular</h3>
+<div class="price">₹4,999</div>
+<p>Medium quantity<br>Priority delivery<br>Best value</p>
+</div>
+<div class="card">
+<h3>Premium</h3>
+<div class="price">₹9,999</div>
+<p>Large quantity<br>Fastest processing<br>Dedicated support</p>
+</div>
 </div>
 </section>
 
-<div class="final-cta">
-<h2>Ready to Buy Digital Coins?</h2>
-<a href="https://wa.me/919431792418">Start on WhatsApp</a>
+<!-- TESTIMONIALS -->
+<section>
+<h2>What Clients Say</h2>
+<p class="lead">Trusted by real buyers</p>
+
+<div class="grid">
+<div class="card">
+<p class="testimonial">“Fast delivery and genuine service. Highly recommended.”</p>
+<div class="user">— Aman, Delhi</div>
+</div>
+<div class="card">
+<p class="testimonial">“Very smooth process. WhatsApp support is excellent.”</p>
+<div class="user">— Rahul, Mumbai</div>
+</div>
+<div class="card">
+<p class="testimonial">“Transparent pricing and instant response.”</p>
+<div class="user">— Neha, Bengaluru</div>
+</div>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final">
+<h2>Ready to Get Started?</h2>
+<a class="btn" href="https://wa.me/919431792418">Start on WhatsApp</a>
 </div>
 
 <footer>
@@ -290,6 +225,12 @@ All rights reserved.
 </footer>
 
 <a class="whatsapp" href="https://wa.me/919431792418">💬</a>
+
+<script>
+function toggleTheme(){
+ document.getElementById("body").classList.toggle("light");
+}
+</script>
 
 </body>
 </html>

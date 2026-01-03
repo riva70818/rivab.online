@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Services – RIVAB</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<title>Services – RIVAB</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:radial-gradient(circle at top,#0a1a2f,#020814);color:#fff}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:#000}
+.logo{font-size:28px;font-weight:800;color:#4fd1ff}
+nav a{margin-left:20px;color:#4fd1ff;text-decoration:none}
+section{padding:80px 50px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
+.card{background:#0f213f;padding:35px;border-radius:20px;text-align:center;box-shadow:0 0 30px rgba(79,209,255,.4);transition:.4s}
+.card:hover{transform:translateY(-10px);box-shadow:0 0 60px rgba(79,209,255,.7)}
+.icon{font-size:40px;margin-bottom:15px}
+footer{text-align:center;padding:25px;background:#000}
+</style>
+</head>
+
+<body>
 <header>
 <div class="logo">RIVAB</div>
 <nav>
@@ -19,17 +32,16 @@
 </header>
 
 <section>
-<h1>Our Services</h1>
+<h1 style="text-align:center">Our Services</h1>
 
-<div class="cards">
-<div class="card"><div class="icon">🪙</div>Coin Selling<br>Verified & genuine coins</div>
-<div class="card"><div class="icon">⚡</div>Instant Delivery<br>No waiting time</div>
-<div class="card"><div class="icon">🔒</div>Secure Deals<br>100% safe handling</div>
-<div class="card"><div class="icon">💬</div>WhatsApp Sales<br>Chat & buy instantly</div>
+<div class="cards" style="margin-top:40px">
+<div class="card"><div class="icon">🪙</div><h3>Coin Selling</h3><p>Verified digital coins</p></div>
+<div class="card"><div class="icon">⚡</div><h3>Instant Delivery</h3><p>No waiting time</p></div>
+<div class="card"><div class="icon">🔐</div><h3>Secure Deals</h3><p>100% safe handling</p></div>
+<div class="card"><div class="icon">💬</div><h3>WhatsApp Sales</h3><p>Direct chat & buy</p></div>
 </div>
 </section>
 
 <footer>© RIVAB</footer>
-<a class="whatsapp" href="https://wa.me/919431792418">💬</a>
 </body>
 </html>

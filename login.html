@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Login – RIVAB</title>
+<style>
+body{background:#020617;color:#fff;font-family:Inter;text-align:center;padding:120px}
+.box{background:#0f213f;padding:40px;border-radius:18px;display:inline-block}
+input,button{padding:14px;margin-top:15px;width:260px;border-radius:10px;border:none}
+button{background:#22c55e;font-weight:800}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>Admin Login</h2>
+<input type="password" id="pass" placeholder="Admin Password">
+<button onclick="login()">Login</button>
+<p id="err"></p>
+</div>
+
+<script>
+function login(){
+ if(pass.value==="RIVAB@123"){   // ← password change kar sakte ho
+  window.location.href="admin.html";
+ }else{
+  err.innerText="Wrong password";
+ }
+}
+</script>
+
+</body>
+</html>

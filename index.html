@@ -3,129 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <title>RIVAB – Digital Coin Selling</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="RIVAB – WhatsApp based digital coin selling platform. Instant delivery, secure transactions, 24x7 support.">
+<meta name="keywords" content="digital coins, coin selling, WhatsApp coin seller, instant coins">
+<meta name="author" content="RIVAB">
+<meta name="robots" content="index, follow">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 
 <style>
-:root{
-  --bg1:#050b1a;
-  --bg2:#0c1f3f;
-  --neon:#00e5ff;
-  --green:#25d366;
-}
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+html{scroll-behavior:smooth}
 body{
-  min-height:100vh;
-  background:radial-gradient(circle at top,var(--bg2),var(--bg1));
-  color:#fff;
-  overflow-x:hidden;
+background:radial-gradient(circle at top,#0a1a33,#030814);
+color:#fff;
+animation:fade .8s ease-in
 }
+@keyframes fade{from{opacity:0}to{opacity:1}}
 
-/* NAVBAR */
 nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 50px;
-  background:rgba(0,0,0,.35);
-  backdrop-filter:blur(8px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:rgba(0,0,0,.4);
+backdrop-filter:blur(8px)
 }
-nav h1{color:var(--neon);letter-spacing:2px}
-nav a{
-  color:#fff;
-  margin-left:25px;
-  text-decoration:none;
-  font-weight:500;
-}
-nav a:hover{color:var(--neon)}
+nav h1{color:#00e5ff;font-size:28px}
+nav a{color:#fff;margin-left:20px;text-decoration:none}
+nav a:hover{color:#00e5ff}
 
-/* HERO */
 .hero{
-  text-align:center;
-  padding:120px 20px 140px;
-  position:relative;
+min-height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px
 }
-.hero h2{
-  font-size:48px;
-  margin-bottom:15px;
-}
-.hero p{opacity:.85}
-.hero a{
-  display:inline-block;
-  margin-top:30px;
-  padding:15px 40px;
-  background:var(--green);
-  color:#fff;
-  border-radius:40px;
-  text-decoration:none;
-  font-size:18px;
-  box-shadow:0 0 20px rgba(37,211,102,.7);
-}
-
-/* COIN ANIMATION */
-.coin{
-  position:absolute;
-  font-size:22px;
-  animation:float 12s linear infinite;
-  opacity:.6;
-}
-@keyframes float{
-  0%{transform:translateY(100vh) rotate(0deg)}
-  100%{transform:translateY(-120vh) rotate(360deg)}
+.hero h2{font-size:48px;margin-bottom:15px}
+.hero p{opacity:.85;margin-bottom:25px}
+.btn{
+background:#25D366;
+padding:15px 30px;
+border-radius:30px;
+color:#fff;
+text-decoration:none;
+font-size:18px;
+box-shadow:0 0 20px rgba(37,211,102,.6)
 }
 
-/* SERVICES */
-.section{
-  padding:80px 8%;
-}
-.section h3{
-  text-align:center;
-  font-size:36px;
-  margin-bottom:50px;
-}
+.section{padding:80px 40px}
+.section h3{text-align:center;font-size:36px;margin-bottom:40px}
+
 .cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px
 }
 .card{
-  background:linear-gradient(145deg,#0c234a,#050b1a);
-  padding:30px;
-  border-radius:20px;
-  text-align:center;
-  transition:.4s;
-  box-shadow:0 0 0 transparent;
+background:rgba(255,255,255,.05);
+border-radius:16px;
+padding:30px;
+text-align:center;
+box-shadow:0 0 30px rgba(0,229,255,.15);
+transition:.3s
 }
 .card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 25px var(--neon);
+transform:translateY(-10px);
+box-shadow:0 0 40px rgba(0,229,255,.6)
 }
-.card span{font-size:40px}
 .card h4{margin:15px 0}
 
-/* FOOTER */
 footer{
-  text-align:center;
-  padding:25px;
-  background:#000;
-  opacity:.7;
+text-align:center;
+padding:30px;
+background:#020613;
+opacity:.8
 }
 
-/* WHATSAPP FLOAT */
 .whatsapp{
-  position:fixed;
-  right:25px;
-  bottom:25px;
-  background:#25d366;
-  color:#fff;
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:30px;
-  box-shadow:0 0 20px #25d366;
-  text-decoration:none;
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:#fff;
+padding:15px 18px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 0 20px rgba(37,211,102,.8)
 }
 </style>
 </head>
@@ -133,56 +101,48 @@ footer{
 <body>
 
 <nav>
-  <h1>RIVAB</h1>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </div>
+<h1>RIVAB</h1>
+<div>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="contact.html">Contact</a>
+<a href="disclaimer.html">Disclaimer</a>
+<a href="terms.html">Terms</a>
+</div>
 </nav>
 
-<div class="hero">
-  <h2>Digital Coin Selling Made Easy</h2>
-  <p>Instant Delivery • Secure Transactions • WhatsApp Support</p>
-  <a href="https://wa.me/919431792418">Chat on WhatsApp</a>
+<section class="hero">
+<h2>Digital Coin Selling Made Easy</h2>
+<p>Instant Delivery • Secure Transactions • WhatsApp Support</p>
+<a class="btn" href="https://wa.me/919431792418">Chat on WhatsApp</a>
+</section>
 
-  <!-- Floating coins -->
-  <div class="coin" style="left:10%;animation-duration:10s">🪙</div>
-  <div class="coin" style="left:30%;animation-duration:14s">💰</div>
-  <div class="coin" style="left:60%;animation-duration:11s">🪙</div>
-  <div class="coin" style="left:80%;animation-duration:16s">💎</div>
+<section class="section">
+<h3>Our Services</h3>
+<div class="cards">
+<div class="card">
+<h4>🪙 Coin Selling</h4>
+<p>Verified & trusted digital coins.</p>
 </div>
-
-<div class="section">
-  <h3>Our Services</h3>
-  <div class="cards">
-    <div class="card">
-      <span>🪙</span>
-      <h4>Digital Coin Selling</h4>
-      <p>Verified & trusted digital coins.</p>
-    </div>
-    <div class="card">
-      <span>⚡</span>
-      <h4>Instant Delivery</h4>
-      <p>Fast processing after confirmation.</p>
-    </div>
-    <div class="card">
-      <span>🔒</span>
-      <h4>Secure Deals</h4>
-      <p>100% safe transactions.</p>
-    </div>
-    <div class="card">
-      <span>📱</span>
-      <h4>WhatsApp Support</h4>
-      <p>Chat & buy instantly.</p>
-    </div>
-  </div>
+<div class="card">
+<h4>⚡ Instant Delivery</h4>
+<p>Fast processing after confirmation.</p>
 </div>
+<div class="card">
+<h4>🔒 Secure Deals</h4>
+<p>100% safe handling.</p>
+</div>
+<div class="card">
+<h4>💬 WhatsApp Sales</h4>
+<p>Chat & buy instantly.</p>
+</div>
+</div>
+</section>
 
 <footer>© RIVAB</footer>
 
-<a class="whatsapp" href="https://wa.me/919431792418">📞</a>
+<a class="whatsapp" href="https://wa.me/919431792418">💬</a>
 
 </body>
 </html>
